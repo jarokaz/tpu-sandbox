@@ -4,5 +4,11 @@
 
 - Don't use TF 2.5 image. Start with a Python image and install TF 2.5
 
+```
+pip install tensorflow tensorflow-datasets cloud-tpu-client
+```
+
+
+
 
 
