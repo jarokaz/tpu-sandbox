@@ -5,7 +5,7 @@
 ### Creating a TPU execution group
 
 ```
-gcloud compute tpus execution-group create \
+gcloud compute tpus execution-groups create \
 --name jk-tpu-exec-group \
 --zone us-central1-a \
 --machine-type n1-standard-8 \
