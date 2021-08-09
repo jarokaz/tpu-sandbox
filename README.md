@@ -18,11 +18,18 @@ gcloud compute tpus create jk-tpu-node \
 ```
 ### Create a user VM
 
+A user VM can use any base image as long as the pre-requistes like TensorFlow are pre-installed or can be installed. E.g. one of GCP standard deep learning images. When provisioning a user VM using the `gcloud compute tpus execution-groups create` command an image from the `ml-images` project is used. E.g. when you create an execution group for TensorFlow 2.5 the tf-2-5-0. The images from the `ml-images` project have some TPU samples and pre-requisites pre-installed.
+
 ```
+VM_NAME=jk-user-vm
+IMAGE_FAMILY=tf-2-5-0
+IMAGE_PROJECT=ml-images
+MACHINE_TYPE=n1-standard-8
+
 gcloud compute instances create jk-user-vm \
---machine-type n1-standard-8 \
---image-family tf2-2-5-cpu \
---image-project deeplearning-platform-release \
+--machine-type $VM_NAME \
+--image-family $IMAGE_FAMILY \
+--image-project IMAGE_PROJECT \
 --scopes https://www.googleapis.com/auth/cloud-platform \
 --no-address
 ```
