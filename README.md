@@ -22,7 +22,7 @@ A user VM can use any base image as long as the pre-requistes like TensorFlow ar
 
 When provisioning a user VM using the `gcloud compute tpus execution-groups create` command an image from the `ml-images` project is used. E.g. when you create an execution group for TensorFlow 2.5 the tf-2-5-0 image family is used. The images from the `ml-images` project have some TPU samples and pre-requisites pre-installed. 
 
-If you want to mirror what the `gcloud compute tpus execution-groups create` does by using separate `gcloud compute tpus create` and `gcloud compute instance create` command to create a user VM without an external IP address use the following settings.
+If you want to mirror what the `gcloud compute tpus execution-groups create` does by using separate `gcloud compute tpus create` and `gcloud compute instance create` commands to create a user VM without an external IP address, use the following settings.
 
 ```
 VM_NAME=jk-user-vm
