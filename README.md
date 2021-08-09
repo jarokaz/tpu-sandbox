@@ -16,7 +16,16 @@ gcloud compute tpus create jk-tpu-node \
 --accelerator-type v3-8 \
 --version 2.5.0 
 ```
+### Create a user VM
 
+```
+gcloud compute instances create jk-user-vm \
+--machine-type n1-standard-8 \
+--image-family tf2-2-5 \
+--image-project deeplearning-platform-release \
+--scopes https://www.googleapis.com/auth/cloud-platform \
+--no-address
+```
 
 ## TPU VM quickstart
 
