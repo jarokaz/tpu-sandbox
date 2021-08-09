@@ -18,7 +18,9 @@ gcloud compute tpus execution-groups create \
 ```
 gcloud compute tpus create jk-tpu-node-2 \
 --accelerator-type v3-8 \
---version 2.5.0
+--version 2.5.0 \
+--zone us-central1 \
+--project jk-mlops-dev
 ```
 
 
