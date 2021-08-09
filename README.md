@@ -9,7 +9,7 @@ gcloud config set project jk-mlops-dev
 gcloud config set compute/zone us-central1-a
 ```
 
-### Creating a TPU node
+### Create a TPU node
 
 ```
 gcloud compute tpus create jk-tpu-node \
