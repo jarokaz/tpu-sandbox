@@ -1,16 +1,12 @@
 # GCP Cloud TPU sandbox
 
-## Using TPU nodes
+##  TPU Node quickstart
 
-### Creating a TPU execution group
+### Set the default GCP project and zone
 
 ```
-gcloud compute tpus execution-groups create \
---name jk-tpu-exec-group \
---zone us-central1-a \
---machine-type n1-standard-8 \
---accelerator-type v3-8 \
---tf-version 2.5.0 
+gcloud config set project jk-mlops-dev
+gcloud config set compute/zone us-central1-a
 ```
 
 ### Creating a TPU node
@@ -19,9 +15,10 @@ gcloud compute tpus execution-groups create \
 gcloud compute tpus create jk-tpu-node-2 \
 --accelerator-type v3-8 \
 --version 2.5.0 \
---zone us-central1 \
---project jk-mlops-dev
 ```
+
+
+## TPU VM quickstart
 
 
 ### Creating a TPU VM with an external IP address
@@ -66,6 +63,17 @@ pip install tensorflow tensorflow-datasets cloud-tpu-client
 ```
 
 
+# Parking lot
 
+### Creating a TPU execution group
+
+```
+gcloud compute tpus execution-groups create \
+--name jk-tpu-exec-group \
+--zone us-central1-a \
+--machine-type n1-standard-8 \
+--accelerator-type v3-8 \
+--tf-version 2.5.0 
+```
 
 
