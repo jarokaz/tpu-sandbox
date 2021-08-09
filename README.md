@@ -14,7 +14,7 @@ gcloud config set compute/zone us-central1-a
 ```
 gcloud compute tpus create jk-tpu-node \
 --accelerator-type v3-8 \
---version 2.5.0 \
+--version 2.5.0 
 ```
 
 
