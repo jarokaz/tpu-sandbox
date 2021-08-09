@@ -33,7 +33,7 @@ MACHINE_TYPE=n1-standard-8
 gcloud compute instances create jk-user-vm \
 --machine-type $VM_NAME \
 --image-family $IMAGE_FAMILY \
---image-project IMAGE_PROJECT \
+--image-project $IMAGE_PROJECT \
 --scopes https://www.googleapis.com/auth/cloud-platform \
 --no-address
 ```
