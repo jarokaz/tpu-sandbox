@@ -11,9 +11,15 @@ gcloud compute tpus execution-groups create \
 --machine-type n1-standard-8 \
 --accelerator-type v3-8 \
 --tf-version 2.5.0 \
---use-with-notebook
 ```
 
+### Creating a TPU node
+
+```
+gcloud compute tpus create jk-tpu-node-2 \
+--accelerator-type v3-8 \
+--version 2.5.0
+```
 
 ```
 gcloud compute tpus create 
