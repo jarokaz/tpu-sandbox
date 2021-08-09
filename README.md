@@ -31,7 +31,7 @@ jk-tpu-vm-2 \
 --version v2-alpha \
 ```
 
-### Creating a TPU VM with an external IP address
+### Creating a TPU VM without an external IP address
 
 ```
 gcloud alpha compute tpus tpu-vm create \
