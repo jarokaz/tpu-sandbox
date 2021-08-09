@@ -30,8 +30,8 @@ IMAGE_FAMILY=tf-2-5-0
 IMAGE_PROJECT=ml-images
 MACHINE_TYPE=n1-standard-8
 
-gcloud compute instances create jk-user-vm \
---machine-type $VM_NAME \
+gcloud compute instances create $VM_NAME \
+--machine-type $MACHINE_TYPE \
 --image-family $IMAGE_FAMILY \
 --image-project $IMAGE_PROJECT \
 --scopes https://www.googleapis.com/auth/cloud-platform \
