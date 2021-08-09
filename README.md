@@ -21,7 +21,7 @@ gcloud compute tpus create jk-tpu-node \
 ```
 gcloud compute instances create jk-user-vm \
 --machine-type n1-standard-8 \
---image-family tf2-2-5 \
+--image-family tf2-2-5-cpu \
 --image-project deeplearning-platform-release \
 --scopes https://www.googleapis.com/auth/cloud-platform \
 --no-address
