@@ -30,12 +30,12 @@ def get_args():
     )
 
     return parser.parse_args()
-
-
+    
+   
 def main():
 
     args = get_args()
-
+    
     logging.info(f"Testing TPU: {args.tpu_name}")
     resolver = tf.distribute.cluster_resolver.TPUClusterResolver(tpu=args.tpu_name)
     tf.config.experimental_connect_to_cluster(resolver)
