@@ -74,26 +74,6 @@ jk-tpu-vm-2 \
 ```
 
 
-## Installing software components
 
-- Don't use TF 2.5 image. Start with a Python image and install TF 2.5
-
-```
-pip install tensorflow tensorflow-datasets cloud-tpu-client
-```
-
-
-# Parking lot
-
-### Creating a TPU execution group
-
-```
-gcloud compute tpus execution-groups create \
---name jk-tpu-exec-group \
---zone us-central1-a \
---machine-type n1-standard-8 \
---accelerator-type v3-8 \
---tf-version 2.5.0 
-```
 
 
