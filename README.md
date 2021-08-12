@@ -53,17 +53,24 @@ jk-tpu-vm-2 \
 ### Creating a TPU VM without an external IP address
 
 #### Enable Private Google Access
-```
-gcloud compute networks subnets update default \
---region us-central1 \
---enable-private-ip-google-access
-```
+
+##### Check if Private Google Access is enabled
 
 ```
 gcloud compute networks subnets describe default \
 --region=us-central1 \
 --format="get(privateIpGoogleAccess)"
 ```
+##### Enable Private Google Access
+
+```
+gcloud compute networks subnets update default \
+--region us-central1 \
+--enable-private-ip-google-access
+```
+
+
+##### Create a TPU VM without external IP address
 
 ```
 gcloud alpha compute tpus tpu-vm create \
