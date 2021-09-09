@@ -1,0 +1,144 @@
+2021-09-08 17:59:58.867911: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory
+2021-09-08 17:59:58.867964: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+I0908 18:00:00.623781 140244587423552 discovery.py:280] URL being requested: GET https://www.googleapis.com/discovery/v1/apis/tpu/v1/rest
+I0908 18:00:00.663440 140244587423552 discovery.py:911] URL being requested: GET https://tpu.googleapis.com/v1/projects/jk-mlops-dev/locations/us-central1-a/nodes/jk-tpu-node?alt=json
+I0908 18:00:00.663678 140244587423552 transport.py:157] Attempting refresh to obtain initial access_token
+I0908 18:00:00.759511 140244587423552 discovery.py:280] URL being requested: GET https://www.googleapis.com/discovery/v1/apis/tpu/v1/rest
+I0908 18:00:00.793785 140244587423552 discovery.py:911] URL being requested: GET https://tpu.googleapis.com/v1/projects/jk-mlops-dev/locations/us-central1-a/nodes/jk-tpu-node?alt=json
+I0908 18:00:00.794022 140244587423552 transport.py:157] Attempting refresh to obtain initial access_token
+2021-09-08 18:00:00.835665: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2021-09-08 18:00:00.835711: W tensorflow/stream_executor/cuda/cuda_driver.cc:326] failed call to cuInit: UNKNOWN ERROR (303)
+2021-09-08 18:00:00.835733: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (jk-tpu-node-1): /proc/driver/nvidia/version does not exist
+I0908 18:00:00.836312 140244587423552 discovery.py:280] URL being requested: GET https://www.googleapis.com/discovery/v1/apis/tpu/v1/rest
+I0908 18:00:00.874192 140244587423552 discovery.py:911] URL being requested: GET https://tpu.googleapis.com/v1/projects/jk-mlops-dev/locations/us-central1-a/nodes/jk-tpu-node?alt=json
+I0908 18:00:00.874425 140244587423552 transport.py:157] Attempting refresh to obtain initial access_token
+I0908 18:00:00.941536 140244587423552 discovery.py:280] URL being requested: GET https://www.googleapis.com/discovery/v1/apis/tpu/v1/rest
+I0908 18:00:00.979705 140244587423552 discovery.py:911] URL being requested: GET https://tpu.googleapis.com/v1/projects/jk-mlops-dev/locations/us-central1-a/nodes/jk-tpu-node?alt=json
+I0908 18:00:00.979921 140244587423552 transport.py:157] Attempting refresh to obtain initial access_token
+2021-09-08 18:00:01.019756: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-09-08 18:00:01.034457: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job worker -> {0 -> 10.95.77.106:8470}
+2021-09-08 18:00:01.034525: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job localhost -> {0 -> localhost:36796}
+2021-09-08 18:00:01.051649: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job worker -> {0 -> 10.95.77.106:8470}
+2021-09-08 18:00:01.051709: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job localhost -> {0 -> localhost:36796}
+2021-09-08 18:00:01.052263: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:411] Started server with target: grpc://localhost:36796
+I0908 18:00:01.052978 140244587423552 remote.py:218] Entering into master device scope: /job:worker/replica:0/task:0/device:CPU:0
+INFO:tensorflow:Initializing the TPU system: jk-tpu-node
+I0908 18:00:01.053436 140244587423552 tpu_strategy_util.py:74] Initializing the TPU system: jk-tpu-node
+INFO:tensorflow:Clearing out eager caches
+I0908 18:00:09.052308 140244587423552 tpu_strategy_util.py:109] Clearing out eager caches
+INFO:tensorflow:Finished initializing TPU system.
+I0908 18:00:09.054843 140244587423552 tpu_strategy_util.py:135] Finished initializing TPU system.
+I0908 18:00:09.055943 140244587423552 discovery.py:280] URL being requested: GET https://www.googleapis.com/discovery/v1/apis/tpu/v1/rest
+I0908 18:00:09.097017 140244587423552 discovery.py:911] URL being requested: GET https://tpu.googleapis.com/v1/projects/jk-mlops-dev/locations/us-central1-a/nodes/jk-tpu-node?alt=json
+I0908 18:00:09.097311 140244587423552 transport.py:157] Attempting refresh to obtain initial access_token
+I0908 18:00:09.144708 140244587423552 discovery.py:280] URL being requested: GET https://www.googleapis.com/discovery/v1/apis/tpu/v1/rest
+I0908 18:00:09.180153 140244587423552 discovery.py:911] URL being requested: GET https://tpu.googleapis.com/v1/projects/jk-mlops-dev/locations/us-central1-a/nodes/jk-tpu-node?alt=json
+I0908 18:00:09.180369 140244587423552 transport.py:157] Attempting refresh to obtain initial access_token
+INFO:tensorflow:Found TPU system:
+I0908 18:00:09.277317 140244587423552 tpu_system_metadata.py:159] Found TPU system:
+INFO:tensorflow:*** Num TPU Cores: 8
+I0908 18:00:09.277517 140244587423552 tpu_system_metadata.py:160] *** Num TPU Cores: 8
+INFO:tensorflow:*** Num TPU Workers: 1
+I0908 18:00:09.277745 140244587423552 tpu_system_metadata.py:161] *** Num TPU Workers: 1
+INFO:tensorflow:*** Num TPU Cores Per Worker: 8
+I0908 18:00:09.277794 140244587423552 tpu_system_metadata.py:163] *** Num TPU Cores Per Worker: 8
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:localhost/replica:0/task:0/device:CPU:0, CPU, 0, 0)
+I0908 18:00:09.277839 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:localhost/replica:0/task:0/device:CPU:0, CPU, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:CPU:0, CPU, 0, 0)
+I0908 18:00:09.277960 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:CPU:0, CPU, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:0, TPU, 0, 0)
+I0908 18:00:09.278007 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:0, TPU, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:1, TPU, 0, 0)
+I0908 18:00:09.278051 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:1, TPU, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:2, TPU, 0, 0)
+I0908 18:00:09.278110 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:2, TPU, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:3, TPU, 0, 0)
+I0908 18:00:09.278153 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:3, TPU, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:4, TPU, 0, 0)
+I0908 18:00:09.278196 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:4, TPU, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:5, TPU, 0, 0)
+I0908 18:00:09.278238 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:5, TPU, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:6, TPU, 0, 0)
+I0908 18:00:09.278279 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:6, TPU, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:7, TPU, 0, 0)
+I0908 18:00:09.278320 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU:7, TPU, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU_SYSTEM:0, TPU_SYSTEM, 0, 0)
+I0908 18:00:09.278375 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:TPU_SYSTEM:0, TPU_SYSTEM, 0, 0)
+INFO:tensorflow:*** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:XLA_CPU:0, XLA_CPU, 0, 0)
+I0908 18:00:09.278418 140244587423552 tpu_system_metadata.py:165] *** Available Device: _DeviceAttributes(/job:worker/replica:0/task:0/device:XLA_CPU:0, XLA_CPU, 0, 0)
+I0908 18:00:09.278769 140244587423552 bert_simple.py:50] Init Done!
+I0908 18:00:40.524824 140244587423552 tpu.py:1377] TPU has inputs with dynamic shapes: [<tf.Tensor 'Const:0' shape=() dtype=int32>, <tf.Tensor 'IteratorGetNext:0' shape=(None,) dtype=string>, <tf.Tensor 'IteratorGetNext:1' shape=(None,) dtype=int64>]
+/opt/conda/lib/python3.7/site-packages/tensorflow/python/framework/indexed_slices.py:449: UserWarning: Converting sparse IndexedSlices(IndexedSlices(indices=Tensor("Adam/gradients/StatefulPartitionedCall:1", shape=(None,), dtype=int32), values=Tensor("Adam/gradients/StatefulPartitionedCall:0", dtype=float32), dense_shape=Tensor("Adam/gradients/StatefulPartitionedCall:2", shape=(None,), dtype=int32))) to a dense Tensor of unknown shape. This may consume a large amount of memory.
+  "shape. This may consume a large amount of memory." % value)
+I0908 18:01:10.000333 140244587423552 tpu.py:1377] TPU has inputs with dynamic shapes: [<tf.Tensor 'Const:0' shape=() dtype=int32>, <tf.Tensor 'IteratorGetNext:0' shape=(None,) dtype=string>, <tf.Tensor 'IteratorGetNext:1' shape=(None,) dtype=int64>]
+Model: "model"
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+text (InputLayer)               [(None,)]            0                                            
+__________________________________________________________________________________________________
+preprocessing (KerasLayer)      {'input_word_ids': ( 0           text[0][0]                       
+__________________________________________________________________________________________________
+encoder (KerasLayer)            {'sequence_output':  333579265   preprocessing[0][0]              
+                                                                 preprocessing[0][1]              
+                                                                 preprocessing[0][2]              
+__________________________________________________________________________________________________
+dense (Dense)                   (None, 1)            1025        encoder[0][25]                   
+__________________________________________________________________________________________________
+softmax (Softmax)               (None, 1)            0           dense[0][0]                      
+==================================================================================================
+Total params: 333,580,290
+Trainable params: 333,580,289
+Non-trainable params: 1
+__________________________________________________________________________________________________
+Epoch 1/2
+Traceback (most recent call last):
+  File "bert_simple.py", line 69, in <module>
+    app.run(main)
+  File "/opt/conda/lib/python3.7/site-packages/absl/app.py", line 303, in run
+    _run_main(main, args)
+  File "/opt/conda/lib/python3.7/site-packages/absl/app.py", line 251, in _run_main
+    sys.exit(main(argv))
+  File "bert_simple.py", line 64, in main
+    model.fit(tx, ty, epochs=2, batch_size=2, validation_data=(vx, vy), verbose=True)
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/keras/engine/training.py", line 1188, in fit
+    callbacks.on_train_batch_end(end_step, logs)
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/keras/callbacks.py", line 457, in on_train_batch_end
+    self._call_batch_hook(ModeKeys.TRAIN, 'end', batch, logs=logs)
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/keras/callbacks.py", line 317, in _call_batch_hook
+    self._call_batch_end_hook(mode, batch, logs)
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/keras/callbacks.py", line 337, in _call_batch_end_hook
+    self._call_batch_hook_helper(hook_name, batch, logs)
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/keras/callbacks.py", line 375, in _call_batch_hook_helper
+    hook(batch, logs)
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/keras/callbacks.py", line 1029, in on_train_batch_end
+    self._batch_update_progbar(batch, logs)
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/keras/callbacks.py", line 1101, in _batch_update_progbar
+    logs = tf_utils.sync_to_numpy_or_python_type(logs)
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/keras/utils/tf_utils.py", line 519, in sync_to_numpy_or_python_type
+    return nest.map_structure(_to_single_numpy_or_python_type, tensors)
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/util/nest.py", line 867, in map_structure
+    structure[0], [func(*x) for x in entries],
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/util/nest.py", line 867, in <listcomp>
+    structure[0], [func(*x) for x in entries],
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/keras/utils/tf_utils.py", line 515, in _to_single_numpy_or_python_type
+    x = t.numpy()
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 1094, in numpy
+    maybe_arr = self._numpy()  # pylint: disable=protected-access
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/framework/ops.py", line 1062, in _numpy
+    six.raise_from(core._status_to_exception(e.code, e.message), None)  # pylint: disable=protected-access
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.InternalError: RET_CHECK failure (third_party/tensorflow/core/tpu/graph_rewrite/distributed_tpu_rewrite_pass.cc:1775) arg_shape.handle_type != DT_INVALID  input edge: [id=5574 model_preprocessing_163771:0 -> cluster_train_function:1229]
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/distribute/tpu_strategy.py", line 865, in async_wait
+    context.async_wait()
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/eager/context.py", line 2409, in async_wait
+    context().sync_executors()
+  File "/opt/conda/lib/python3.7/site-packages/tensorflow/python/eager/context.py", line 644, in sync_executors
+    pywrap_tfe.TFE_ContextSyncExecutors(self._context_handle)
+tensorflow.python.framework.errors_impl.InternalError: RET_CHECK failure (third_party/tensorflow/core/tpu/graph_rewrite/distributed_tpu_rewrite_pass.cc:1775) arg_shape.handle_type != DT_INVALID  input edge: [id=5574 model_preprocessing_163771:0 -> cluster_train_function:1229]
+2021-09-08 18:01:36.035130: W ./tensorflow/core/distributed_runtime/eager/destroy_tensor_handle_node.h:57] Ignoring an error encountered when deleting remote tensors handles: Invalid argument: Unable to find the relevant tensor remote_handle: Op ID: 33407, Output num: 0
+Additional GRPC error information from remote target /job:worker/replica:0/task:0:
+:{"created":"@1631124096.031715866","description":"Error received from peer ipv4:10.95.77.106:8470","file":"external/com_github_grpc_grpc/src/core/lib/surface/call.cc","file_line":1056,"grpc_message":"Unable to find the relevant tensor remote_handle: Op ID: 33407, Output num: 0","grpc_status":3}

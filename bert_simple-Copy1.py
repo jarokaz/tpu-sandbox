@@ -24,25 +24,20 @@ def get_tpu_strategy(tpu_address):
   cluster_resolver = tpu_initialize(tpu_address)
   return tf.distribute.TPUStrategy(cluster_resolver)
 
+def create_dataset(inputs, labels, batch_size, bert_preprocess_model):
+  dataset = tf.data.Dataset.from_tensor_slices((inputs, labels))
+  dataset = dataset.batch(batch_size)
+  dataset = dataset.map(lambda x, y: (bert_preprocess_model(x), y))
+  return dataset
+
 def get_bert_model():
-#    preprocessor = hub.load(handle=preprocessor_uri)
-#    # Tokenize
-#    tokenizer = hub.KerasLayer(preprocessor.tokenize, trainable=False)    
-#    # PACK
-#    seq_length = 128  # Your choice here.
-#    bert_pack_inputs = hub.KerasLayer(
-#      preprocessor.bert_pack_inputs,
-#      arguments=dict(seq_length=seq_length)
-#    )  # Optional argument.
     
     bert = hub.KerasLayer(
       handle=model_uri, 
       trainable=True,
       name='encoder'
     )
-    preprocessing_layer = hub.KerasLayer(
-        preprocessor_uri, 
-        name='preprocessing')
+
 
     #text_input = tf.keras.layers.Input(shape=(), dtype=tf.string)
     #Tokenize
@@ -75,8 +70,27 @@ def main(_):
     
   #train_ds = tf.data.Dataset.from_tensor_slices((tx, ty)).batch(2)
   #valid_ds = tf.data.Dataset.from_tensor_slices((vx, vy)).batch(2)
+  preprocessing_layer = hub.KerasLayer(
+        preprocessor_uri, 
+        name='preprocessing')
+
+  text_input = tf.keras.layers.Input(shape=(), dtype=tf.string, name='text')
+  encoder_inputs = preprocessing_layer(text_input)
+
   with strategy.scope():
-    model = get_bert_model()
+    #model = get_bert_model()
+    bert = hub.KerasLayer(
+      handle=model_uri, 
+      trainable=True,
+      name='encoder'
+    )
+    
+    model_output = bert(encoder_inputs)
+    embedding = model_output["pooled_output"]
+    logits = tf.keras.layers.Dense(1)(embedding)
+    softmax_prob = tf.keras.layers.Softmax()(logits)
+    model = tf.keras.models.Model(inputs=text_input, outputs=softmax_prob)
+    
     optimizer = tf.keras.optimizers.Adam()
     model.compile(optimizer=optimizer, loss=tf.keras.losses.BinaryCrossentropy(), metrics=["accuracy"])
     model.fit(tx, ty, epochs=2, batch_size=2, validation_data=(vx, vy), verbose=True)
