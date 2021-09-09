@@ -72,23 +72,28 @@ def create_dataset(inputs, labels, batch_size, preprocessor):
 def main(_): 
 
   logging.info('Init Done!')
-  tx = tf.constant(['abc def','xyz abc apple', 'abc xyz', 'appel pen'], dtype=tf.string)
-  ty = tf.constant([1, 1, 0, 0], dtype=tf.int64)
-  vx = tf.constant(['apple peer','abc apple', 'xyz', 'vvvv'], dtype=tf.string)
-  vy = tf.constant([1, 0, 0, 1], dtype=tf.int64)
+
 
   preprocessor = create_bert_preprocess_model()
 
+    
   strategy = get_tpu_strategy('jk-tpu-node')
   #strategy = tf.distribute.get_strategy()
   with strategy.scope():
+    tx = tf.constant(['abc def','xyz abc apple', 'abc xyz', 'appel pen'], dtype=tf.string)
+    ty = tf.constant([1, 1, 0, 0], dtype=tf.int64)
+    vx = tf.constant(['apple peer','abc apple', 'xyz', 'vvvv'], dtype=tf.string)
+    vy = tf.constant([1, 0, 0, 1], dtype=tf.int64)
+    
+    train_ds = create_dataset(tx, ty, 2, preprocessor)
+    valid_ds = create_dataset(vx, vy, 2, preprocessor)
+
     model = get_bert_model()
     optimizer = tf.keras.optimizers.Adam()
     model.compile(optimizer=optimizer, loss=tf.keras.losses.BinaryCrossentropy(), metrics=["accuracy"])
     model.summary()
     
-    train_ds = create_dataset(tx, ty, 2, preprocessor)
-    valid_ds = create_dataset(vx, vy, 2, preprocessor)
+
     model.fit(train_ds, validation_data=valid_ds, verbose=True)
   
 
