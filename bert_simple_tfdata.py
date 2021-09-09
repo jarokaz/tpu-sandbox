@@ -82,7 +82,7 @@ def main(_):
   strategy = get_tpu_strategy('jk-tpu-node')
   #strategy = tf.distribute.get_strategy()
   with strategy.scope():
-    model = get_bert_model()å
+    model = get_bert_model()
     optimizer = tf.keras.optimizers.Adam()
     model.compile(optimizer=optimizer, loss=tf.keras.losses.BinaryCrossentropy(), metrics=["accuracy"])
     model.summary()
