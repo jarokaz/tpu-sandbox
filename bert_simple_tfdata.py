@@ -76,17 +76,18 @@ def main(_):
 
   preprocessor = create_bert_preprocess_model()
 
+  tx = tf.constant(['abc def','xyz abc apple', 'abc xyz', 'appel pen'], dtype=tf.string)
+  ty = tf.constant([1, 1, 0, 0], dtype=tf.int64)
+  vx = tf.constant(['apple peer','abc apple', 'xyz', 'vvvv'], dtype=tf.string)
+  vy = tf.constant([1, 0, 0, 1], dtype=tf.int64)
+    
+  train_ds = create_dataset(tx, ty, 2, preprocessor)
+  valid_ds = create_dataset(vx, vy, 2, preprocessor)
     
   strategy = get_tpu_strategy('jk-tpu-node')
   #strategy = tf.distribute.get_strategy()
   with strategy.scope():
-    tx = tf.constant(['abc def','xyz abc apple', 'abc xyz', 'appel pen'], dtype=tf.string)
-    ty = tf.constant([1, 1, 0, 0], dtype=tf.int64)
-    vx = tf.constant(['apple peer','abc apple', 'xyz', 'vvvv'], dtype=tf.string)
-    vy = tf.constant([1, 0, 0, 1], dtype=tf.int64)
-    
-    train_ds = create_dataset(tx, ty, 2, preprocessor)
-    valid_ds = create_dataset(vx, vy, 2, preprocessor)
+
 
     model = get_bert_model()
     optimizer = tf.keras.optimizers.Adam()
