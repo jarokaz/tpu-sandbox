@@ -48,6 +48,3 @@ trainer:
   best_checkpoint_export_subdir: 'best_ckpt'
   best_checkpoint_eval_metric: 'cls_accuracy'
   best_checkpoint_metric_comp: 'higher'
-runtime:
-  distribution_strategy: 'multi_worker_mirrored'
-  all_reduce_alg: 'nccl'
