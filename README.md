@@ -85,7 +85,7 @@ jk-tpu-vm-2 \
 
 ### Run ResNet
 
-export TPU_NAME=jk-tpu-node-v2
+export TPU_NAME=jk-tpu-node
 export MODEL_DIR=gs://jk-tpu-staging/models/resnet
 export DATA_DIR=gs://cloud-tpu-test-datasets/fake_imagenet
 
@@ -93,9 +93,9 @@ python3 resnet_ctl_imagenet_main.py \
  --tpu=${TPU_NAME} \
  --model_dir=${MODEL_DIR} \
  --data_dir=${DATA_DIR} \
- --batch_size=1024 \
+ --batch_size=2048 \
  --steps_per_loop=500 \
- --train_epochs=1 \
+ --train_epochs=5 \
  --use_synthetic_data=false \
  --dtype=fp32 \
  --enable_eager=true \
