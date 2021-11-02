@@ -35,7 +35,7 @@ export RANGE=10.0.0.0/9
 gcloud beta compute tpus create jk-tpu-node501 \
 --zone $ZONE \
 --accelerator-type $ACCELERATOR_TYPE \
---version $ACCELERATOR_VERSION
+--version $ACCELERATOR_VERSION \
 --network $HOST_NETWORK \
 --range $RANGE \
 --use-service-networking 
