@@ -1,3 +1,13 @@
+
+
+## List available subnets
+
+```
+export HOST_PROJECT=jk-sharedvpc-hostproject
+gcloud compute networks subnets list-usable --project $HOST_PROJECT
+```
+
+
 ## Creating a TPU node on a shared VPC
 
 
