@@ -20,16 +20,22 @@ gcloud beta compute tpus create jk-tpu-node501 --zone us-central1-a \
 
 
 ```
+export HOST_PROJECT=jk-sharedvp-hostproject
 export SUBNET=mysubnet
-export OST_SUBNET=projects/$HOST_PROJECT/regions/$REGION/subnetworks/$SUBNET
+export NETWORK=mynetwork
 export ZONE=us-central1-b
 export REGION=us-central1
+export HOST_SUBNET=projects/$HOST_PROJECT/regions/$REGION/subnetworks/$SUBNET
+export HOST_NETWORK=projects/$HOST_PROJECT/global/networks/$NETWORK
+export ACCELERATOR_TYPE=v3-8
+export ACCELERATOR_VERSION=v2-alpha
 
 gcloud alpha compute tpus tpu-vm create \
-jk-tpu-vm-2 \
+jk-tpu-vm-502 \
 --accelerator-type v3-8 \
 --version v2-alpha \
---subnet $HOST_SUBNET \
+--network $HOST_NETWORK \
+--subnetwork $HOST_SUBNET \
 --zone $ZONE
 
 ```
