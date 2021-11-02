@@ -1,9 +1,19 @@
 
 
-## List available subnets
+## Grant TPU service account `networkUser` permissions in the host project
 
 ```
 export HOST_PROJECT=jk-sharedvpc-hostproject
+export TPU_SA="user:service-464426275157@gcp-sa-tpu.iam.gserviceaccount.com"
+gcloud projects add-iam-policy-binding $HOST_PROJECT \
+--member  $TPU_SA \
+--role "roles/compute.networkUser"
+```
+
+## List available subnets
+
+```
+
 gcloud compute networks subnets list-usable --project $HOST_PROJECT
 ```
 
