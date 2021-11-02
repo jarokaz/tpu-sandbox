@@ -41,6 +41,23 @@ gcloud beta compute tpus create jk-tpu-node501 \
 
 ```
 
+## Create a VM to access a TPU
+
+```
+export INSTANCE_NAME=your_instance
+export SERVICE_PROJECT_ID=project_for_VM
+export HOST_PROJECT=project_for_the_network
+export REGION=us-central1
+export SUBNET=your_subnet
+export ZONE=us-central1-a
+
+
+gcloud compute instances create INSTANCE_NAME \
+--project SERVICE_PROJECT_ID \
+--subnet projects/jk-sharedvpc-hostproject/regions/REGION/subnetworks/SUBNET \
+--zone ZONE
+```
+
 
 ## Creating a TPU VM on a shared VPC
 
