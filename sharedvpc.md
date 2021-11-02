@@ -23,13 +23,18 @@ gcloud compute networks subnets list-usable --project $HOST_PROJECT
 
 ```
 export HOST_PROJECT=jk-sharedvpc-hostproject
+export ZONE=us-central1-b
 export HOST_NETWORK=projects/$HOST_PROJECT/global/networks/mynetwork
 export ACCELERATOR_TYPE=v3-8
 export ACCELERATOR_VERSION=2.6.0
 
-gcloud beta compute tpus create jk-tpu-node501 --zone us-central1-a \
---accelerator-type v3-8 --network $HOST_NETWORK --use-service-networking \
+gcloud beta compute tpus create jk-tpu-node501 \
+--zone $ZONE \
+--accelerator-type $ACCELERATOR_TYPE \
 --version $ACCELERATOR_VERSION
+--network $HOST_NETWORK \
+--use-service-networking 
+
 ```
 
 
