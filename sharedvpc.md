@@ -28,7 +28,7 @@ export ZONE=us-central1-b
 export REGION=us-central1
 export HOST_NETWORK=projects/$HOST_PROJECT/global/networks/mynetwork
 export HOST_SUBNET=projects/$HOST_PROJECT/regions/$REGION/subnetworks/$SUBNET
-export ACCELERATOR_TYPE=v3-8
+export ACCELERATOR_TYPE=v2-8
 export ACCELERATOR_VERSION=2.6.0
 export RANGE=10.0.0.0/29
 
@@ -37,7 +37,6 @@ gcloud beta compute tpus create jk-tpu-node501 \
 --accelerator-type $ACCELERATOR_TYPE \
 --version $ACCELERATOR_VERSION \
 --network $HOST_NETWORK \
---range $RANGE \
 --use-service-networking 
 
 ```
