@@ -34,8 +34,9 @@ gcloud alpha compute tpus tpu-vm create \
 jk-tpu-vm-502 \
 --accelerator-type v3-8 \
 --version v2-alpha \
+--zone $ZONE \
 --network $HOST_NETWORK \
---subnetwork $HOST_SUBNET \
---zone $ZONE
+--subnetwork $HOST_SUBNET 
+
 
 ```
