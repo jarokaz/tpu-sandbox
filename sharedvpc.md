@@ -23,8 +23,11 @@ gcloud compute networks subnets list-usable --project $HOST_PROJECT
 
 ```
 export HOST_PROJECT=jk-sharedvpc-hostproject
+export SUBNET=mysubnet
 export ZONE=us-central1-b
+export REGION=us-central1
 export HOST_NETWORK=projects/$HOST_PROJECT/global/networks/mynetwork
+export HOST_SUBNET=projects/$HOST_PROJECT/regions/$REGION/subnetworks/$SUBNET
 export ACCELERATOR_TYPE=v3-8
 export ACCELERATOR_VERSION=2.6.0
 
