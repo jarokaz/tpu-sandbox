@@ -99,6 +99,14 @@ jk-tpu-vm-2 \
 --zone us-central1-a 
 ```
 
+##### Create a bastion host
 
+```
+gcloud compute instances create jk-bastion \
+--zone us-central1-1 \
+--subnet projects/jk-sharedvpc-hostproject/regions/us-central1/subnetworks/mysubnet \
+--scopes https://www.googleapis.com/auth/cloud-platform \
+--no-address
+```
 
 
