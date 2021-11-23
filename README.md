@@ -91,9 +91,13 @@ jk-tpu-vm-2 \
 --subnetwork projects/jk-sharedvpc-hostproject/regions/us-central1/subnetworks/mysubnet \
 --network projects/jk-sharedvpc-hostproject/global/networks/mynetwork 
 
-
 ```
 
+```
+gcloud alpha compute tpus tpu-vm create \
+jk-tpu-vm-2 \
+--zone us-central1-a 
+```
 
 
 
