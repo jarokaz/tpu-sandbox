@@ -94,6 +94,17 @@ jk-tpu-vm-2 \
 ```
 
 ```
+gcloud alpha compute tpus tpu-vm create \
+jk-tpu-vm-2 \
+--zone us-central1-a \
+--accelerator-type v2-32 \
+--version v2-alpha \
+--subnetwork projects/jk-sharedvpc-hostproject/regions/us-central1/subnetworks/mysubnet \
+--network projects/jk-sharedvpc-hostproject/global/networks/mynetwork \
+--internal-ips
+```
+
+```
 gcloud alpha compute tpus tpu-vm delete \
 jk-tpu-vm-2 \
 --zone us-central1-a 
