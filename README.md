@@ -94,7 +94,7 @@ jk-tpu-vm-2 \
 ```
 
 ```
-gcloud alpha compute tpus tpu-vm create \
+gcloud alpha compute tpus tpu-vm delete \
 jk-tpu-vm-2 \
 --zone us-central1-a 
 ```
