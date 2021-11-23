@@ -80,6 +80,20 @@ jk-tpu-vm-2 \
 --internal-ips
 ```
 
+##### Create a TPU on a shared VPC
+
+```
+gcloud alpha compute tpus tpu-vm create \
+jk-tpu-vm-2 \
+--zone us-central1-a \
+--accelerator-type v3-8 \
+--version v2-alpha \
+--subnetwork projects/jk-sharedvpc-hostproject/regions/us-central1/subnetworks/mysubnet \
+--network projects/jk-sharedvpc-hostproject/global/networks/mynetwork 
+
+
+```
+
 
 
 
