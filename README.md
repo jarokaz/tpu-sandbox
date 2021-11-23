@@ -89,8 +89,8 @@ jk-tpu-vm-2 \
 --accelerator-type v3-8 \
 --version v2-alpha \
 --subnetwork projects/jk-sharedvpc-hostproject/regions/us-central1/subnetworks/mysubnet \
---network projects/jk-sharedvpc-hostproject/global/networks/mynetwork 
-
+--network projects/jk-sharedvpc-hostproject/global/networks/mynetwork \
+--internal-ips
 ```
 
 ```
