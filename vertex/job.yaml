@@ -1,0 +1,8 @@
+worker_pool_specs:
+-  machine_spec:
+     machine_type: cloud-tpu
+     accelerator_type: TPU_V2
+     accelerator_count: 8
+   replica_count: 1
+   container_spec:
+     image_uri: gcr.io/jk-mlops-dev/tpu-helloworld
