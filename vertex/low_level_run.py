@@ -22,49 +22,13 @@ import datetime
 import json
 
 import google.auth
+from google.auth.transport.requests import AuthorizedSession
+
 
 from google.cloud import aiplatform
 from google.cloud.aiplatform_v1beta1 import types
 from google.cloud.aiplatform_v1beta1.services.job_service import JobServiceClient
 
-class MyJobServiceClient(object):
-    """Wrapper around Vertex Job Service API."""
-    
-    def __init__(self, project_id, region):
-        credentials, _ = google.auth.default(scopes=['https://www.googleapis.com/auth/cloud-platform'])
-
-
-        self.authed_session = google.auth.transport.requests.AuthorizedSession(credentials)
-        self.endpoint = f'https://{region}-aiplatform.googleapis.com/v1'
-        self.project_id = project_id
-        self.region = region
-        
-    def wait_for_completion(self, operation_id, message, sleep_time):
-        """Waits for a completion of a long running operation."""
-        
-        api_url = f'{self.ann_parent}/operations/{operation_id}'
-
-        start_time = datetime.datetime.utcnow()
-        while True:
-            response = self.authed_session.get(api_url)
-            if 'done' in response.json().keys():
-                logging.info('Operation completed!')
-                break
-            elapsed_time = datetime.datetime.utcnow() - start_time
-            logging.info('{}. Elapsed time since start: {}.'.format(
-                message, str(elapsed_time)))
-            time.sleep(sleep_time)
-    
-        return response.json()['response']
-
-    def create_custom_job(self, parent, custom_job):
-
-        api_url = f'{self.endpoint}/{parent}/customJobs'
-
-        response = self.authed_session.post(api_url, data=json.dumps(custom_job))
-        if response.status_code != 200:
-            raise RuntimeError(response.text)
-        return response.json()
 
 
 def run(args):
@@ -102,7 +66,14 @@ def run(args):
     print(pp.pformat(custom_job_spec))
 
 
+
+    authed_session = AuthorizedSession(credentials)
+
     parent = f'projects/{args.project}/locations/{args.region}'
+
+    response = authed_session.get(
+       'https://www.googleapis.com/storage/v1/b')
+
     response = job_client.create_custom_job(parent, custom_job_spec)
 
 if __name__ == '__main__':
