@@ -6,6 +6,11 @@ import time
 
 resolver = tf.distribute.cluster_resolver.TPUClusterResolver(tpu='local')
 tf.config.experimental_connect_to_cluster(resolver)
+
+#tf.tpu.experimental.shutdown_tpu_system(
+#    cluster_resolver=resolver
+#)
+
 # This is the TPU initialization code that has to be at the beginning.
 tf.tpu.experimental.initialize_tpu_system(resolver)
 print("All devices: ", tf.config.list_logical_devices('TPU'))
@@ -22,11 +27,12 @@ y = tf.random.uniform((16384, 16384))
 #    z = running_example(x, y)
 #    print(z)
 
-logdir = 'logs'
+logdir = 'gs://jk-tensorboard-logs/tpu-profiling'
 options = None
 
-logdir = 'logs'
-options = None
+options = tf.profiler.experimental.ProfilerOptions(
+    host_tracer_level=1, python_tracer_level=0, device_tracer_level=1, delay_ms=None
+)
 
 strategy = tf.distribute.TPUStrategy(resolver)
 

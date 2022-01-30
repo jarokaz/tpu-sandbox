@@ -121,3 +121,14 @@ gcloud compute instances create jk-bastion \
 ```
 
 
+#### Create a TPU VM with platform scopes
+
+
+```
+gcloud alpha compute tpus tpu-vm create \
+jk-tpu-vm-1 \
+--accelerator-type=v3-8 \
+--version=tpu-vm-tf-2.7.0 \
+--scopes=https://www.googleapis.com/auth/cloud-platform \
+--zone=us-central1-a
+```
