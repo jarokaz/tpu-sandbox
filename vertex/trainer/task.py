@@ -23,6 +23,7 @@ from absl import app
 
 
 def train_eval():
+    print("In train_eval")
     cluster_resolver = tf.distribute.cluster_resolver.TPUClusterResolver(tpu="local")
     tf.config.experimental_connect_to_cluster(cluster_resolver)
     tf.tpu.experimental.initialize_tpu_system(cluster_resolver)
@@ -37,7 +38,7 @@ FLAGS = flags.FLAGS
 flags.DEFINE_list('training_data_paths', None, 'Paths to training datasets')
 flags.DEFINE_list('validation_data_paths', None, 'Paths to validation datasets') 
 flags.DEFINE_integer('tpu_cores', 8, 'A number of TPU cores')
-flags.DEFINE_string('tpu_type', 6, 'TPU type: 6 = TPU_V2, 7 = TPU_V3')
+flags.DEFINE_integer('tpu_type', 6, 'TPU type: 6 = TPU_V2, 7 = TPU_V3')
 
 
 if __name__=='__main__':
