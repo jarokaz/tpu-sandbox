@@ -29,7 +29,7 @@ def train_eval():
     print("All devices: ", tf.config.list_logical_devices('TPU'))
 
 def _main(argv):
-    train_eval():
+    train_eval()
 
 
 FLAGS = flags.FLAGS
