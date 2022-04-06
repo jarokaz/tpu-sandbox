@@ -13,36 +13,27 @@
 # limitations under the License.
 """TPU Hello World."""
 
-import argparse
-import logging
 import os
 import tensorflow as tf
 
-def get_args():
-    """Defines and parse commandline arguments."""
+from absl import flags
+from absl import app
+from absl import logging
 
-    parser = argparse.ArgumentParser()
 
-    parser.add_argument(
-        "--tpu_name",
-        type=str,
-        required=True
-    )
-
-    return parser.parse_args()
+FLAGS = flags.FLAGS
     
    
-def main():
+def main(argv):
 
-    args = get_args()
-    
-    logging.info(f"Testing TPU: {args.tpu_name}")
-    resolver = tf.distribute.cluster_resolver.TPUClusterResolver(tpu=args.tpu_name)
+    logging.info(f"Testing TPU: {FLAGS.tpu_name}")
+    resolver = tf.distribute.cluster_resolver.TPUClusterResolver(tpu=FLAGS.tpu_name)
     tf.config.experimental_connect_to_cluster(resolver)
     tf.tpu.experimental.initialize_tpu_system(resolver)
     logging.info("All devices: {}".format(tf.config.list_logical_devices('TPU')))
 
 
+flags.DEFINE_string('tpu_name', 'local', 'TPU Name')
+
 if __name__ == '__main__':
-   logging.getLogger().setLevel(logging.INFO)
-   main()
+   app.run(main)
